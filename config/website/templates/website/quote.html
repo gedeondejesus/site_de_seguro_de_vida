@@ -1,0 +1,152 @@
+
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}LifeSecure | Get a Quote{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+  <div class="panel" style="max-width: 980px; margin: 0 auto;">
+    <h2 class="panel-title text-center">Get a Quote</h2>
+    <p class="panel-subtitle text-center">Preencha e veja o valor mensal automaticamente.</p>
+
+    <form method="post" id="quoteForm" class="mt-4">
+      {% csrf_token %}
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label text-white-50">Nome completo</label>
+          <input name="full_name" class="form-control" placeholder="Seu nome" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label text-white-50">Email</label>
+          <input name="email" type="email" class="form-control" placeholder="voce@email.com" required>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Gênero</label>
+          <select name="gender" id="gender" class="form-select" required>
+            <option value="">Selecione</option>
+            <option value="F">Mulher</option>
+            <option value="M">Homem</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Idade</label>
+          <input name="age" id="age" type="number" class="form-control" min="0" max="120" placeholder="Ex: 35" required>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Valor do Seguro</label>
+          <select name="coverage_id" id="coverage_id" class="form-select" required>
+            <option value="">Selecione</option>
+            {% for c in coverages %}
+              <option value="{{ c.id }}">{{ c.label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Fumante?</label>
+          <select name="smoker" id="smoker" class="form-select" required>
+            <option value="no">Não</option>
+            <option value="yes">Sim</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Saúde</label>
+          <select name="health" id="health" class="form-select" required>
+            <option value="OK">Sem problemas</option>
+            <option value="LIGHT">Leve</option>
+            <option value="MED">Moderado</option>
+            <option value="HIGH">Grave</option>
+          </select>
+        </div>
+
+        <div class="col-md-12">
+          <label class="form-label text-white-50">Detalhes (se tiver algo importante)</label>
+          <textarea name="health_details" class="form-control" rows="3" placeholder="Ex: pressão alta, diabetes, etc (opcional)"></textarea>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mt-4">
+        <div class="text-white">
+          <div style="opacity:.8;">Valor mensal estimado:</div>
+          <div id="monthlyValue" style="font-size: 28px; font-weight: 900; color:#D4AF37;">—</div>
+          <div id="calcHint" style="opacity:.65; font-size:.9rem;">Selecione gênero, idade e cobertura.</div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-gold" type="submit">Request Quote</button>
+          <a class="btn btn-outline-light btn-soft" href="/plans/">Compare Plans</a>
+        </div>
+      </div>
+
+      <div class="mt-3" style="opacity:.7; font-size:.9rem;">
+        We respect your privacy. No spam. No pressure.
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const gender = document.getElementById("gender");
+  const age = document.getElementById("age");
+  const cov = document.getElementById("coverage_id");
+  const smoker = document.getElementById("smoker");
+  const health = document.getElementById("health");
+  const out = document.getElementById("monthlyValue");
+  const hint = document.getElementById("calcHint");
+
+  let t = null;
+
+  function canCalc(){
+    return gender.value && age.value && cov.value;
+  }
+
+  async function calc(){
+    if(!canCalc()){
+      out.textContent = "—";
+      hint.textContent = "Selecione gênero, idade e cobertura.";
+      return;
+    }
+
+    const smokerVal = (smoker.value === "yes") ? "1" : "0";
+    const url = `/api/calc-premium/?gender=${encodeURIComponent(gender.value)}&age=${encodeURIComponent(age.value)}&coverage_id=${encodeURIComponent(cov.value)}&smoker=${smokerVal}&health=${encodeURIComponent(health.value)}`;
+
+    try{
+      hint.textContent = "Calculando...";
+      const res = await fetch(url);
+      const data = await res.json();
+
+      if(!res.ok || !data.ok){
+        out.textContent = "—";
+        hint.textContent = data.error || "Sem preço cadastrado (ajuste no Admin).";
+        return;
+      }
+
+      out.textContent = `$${data.total}/mês`;
+      hint.textContent = `Base: $${data.base} | Fumante: ${data.smoker_factor}x | Saúde: ${data.health_factor}x`;
+    }catch(e){
+      out.textContent = "—";
+      hint.textContent = "Erro ao calcular.";
+    }
+  }
+
+  function schedule(){
+    clearTimeout(t);
+    t = setTimeout(calc, 250);
+  }
+
+  [gender, age, cov, smoker, health].forEach(el => {
+    el.addEventListener("change", schedule);
+    el.addEventListener("keyup", schedule);
+  });
+
+})();
+</script>
+{% endblock %}

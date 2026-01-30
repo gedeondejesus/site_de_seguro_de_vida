@@ -1,0 +1,78 @@
+
+
+
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}LifeSecure | Plans{% endblock %}
+
+{% block content %}
+<div class="container plans-hero">
+
+  <section class="plans-panel">
+    <h1 class="plans-title">Plans &amp; Coverage</h1>
+    <p class="plans-subtitle">Choose a plan that fits your family and your budget.</p>
+
+    <div class="row g-4 mt-3">
+
+      <!-- Term Life -->
+      <div class="col-md-6 col-lg-4">
+        <div class="plan-card">
+          <div class="plan-name">Term Life</div>
+          <p class="plan-desc">Affordable coverage for a set period (10–30 years).</p>
+
+          <ul class="plan-list">
+            <li>Best for families</li>
+            <li>Lower monthly cost</li>
+            <li>Simple protection</li>
+          </ul>
+
+          <div class="plan-actions d-flex gap-2 flex-wrap">
+            <a href="/quote/" class="btn btn-outline-gold">Get Quote</a>
+            <a href="/contact/" class="btn btn-outline-light btn-soft">Talk to us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whole Life (featured) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="plan-card plan-card--featured">
+          <div class="plan-name">Whole Life</div>
+          <p class="plan-desc">Lifetime coverage with cash value growth.</p>
+
+          <ul class="plan-list">
+            <li>Coverage for life</li>
+            <li>Builds cash value</li>
+            <li>Stable premiums</li>
+          </ul>
+
+          <div class="plan-actions d-flex gap-2 flex-wrap">
+            <a href="/quote/" class="btn btn-gold">Get Quote</a>
+            <a href="/contact/" class="btn btn-outline-light btn-soft">Talk to us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Universal Life -->
+      <div class="col-md-6 col-lg-4">
+        <div class="plan-card">
+          <div class="plan-name">Universal Life</div>
+          <p class="plan-desc">Flexible premiums and adjustable coverage.</p>
+
+          <ul class="plan-list">
+            <li>Flexible payments</li>
+            <li>Adjustable benefits</li>
+            <li>Long-term planning</li>
+          </ul>
+
+          <div class="plan-actions d-flex gap-2 flex-wrap">
+            <a href="/quote/" class="btn btn-outline-gold">Get Quote</a>
+            <a href="/contact/" class="btn btn-outline-light btn-soft">Talk to us</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+{% endblock %}

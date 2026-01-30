@@ -1,0 +1,210 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}LifeSecure | Home{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+
+  {% if banners %}
+  <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+      {% for b in banners %}
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="{{ forloop.counter0 }}"
+              class="{% if forloop.first %}active{% endif %}"></button>
+      {% endfor %}
+    </div>
+
+    <div class="carousel-inner">
+      {% for b in banners %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img src="{{ b.image.url }}" class="d-block w-100 hero-img" alt="{{ b.title }}">
+
+        <div class="hero-overlay hero-overlay--mobile">
+          <div class="hero-box hero-box--mobile">
+            
+            <img class="hero-logo" src="{% static 'website/img/logo.png' %}" alt="Heller Finance">
+            <div class="hero-brand">HELLER FINANCE</div>
+            <div class="hero-text">
+              Protegendo o futuro da sua família<br>
+              com estratégia e propósito.
+            </div>
+            <div class="hero-cta">
+              <a class="btn btn-gold" href="/quote/">Agendar uma conversa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  {% else %}
+    <div class="alert alert-warning mt-3">No banners yet. Add banners in Admin.</div>
+  {% endif %}
+
+  <!-- LINHA BRILHANTE -->
+  <div class="section-divider my-4"></div>
+
+  <!-- SERVIÇOS -->
+  <section class="panel">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="service-mini">
+          <div class="icon">🛡️</div>
+          <h4>Proteção Familiar</h4>
+          <p>Segurança para quem você ama, com planejamento e clareza.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-mini">
+          <div class="icon">📈</div>
+          <h4>Estratégia para Empresários</h4>
+          <p>Soluções financeiras sob medida para crescer com proteção.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-mini">
+          <div class="icon">👨‍👩‍👧‍👦</div>
+          <h4>Planejamento de Filhos</h4>
+          <p>Construindo um futuro sólido com decisões inteligentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINHA BRILHANTE -->
+  <div class="section-divider my-4"></div>
+
+  <!-- CARDS DINÂMICOS -->
+  <section class="panel">
+    <div class="panel-title">Nossos Serviços</div>
+    <div class="panel-subtitle">Escolha a melhor proteção com clareza.</div>
+
+    <div class="row g-4 mt-2">
+      {% if cards %}
+        {% for c in cards %}
+        <div class="col-md-6 col-lg-4">
+          <div class="premium-card h-100">
+            {% if c.image %}
+              <img class="premium-card__img" src="{{ c.image.url }}" alt="{{ c.title }}">
+            {% endif %}
+            <div class="premium-card__body">
+              <div class="premium-card__meta">
+                <div class="premium-icon">★</div>
+                <div class="premium-card__title">{{ c.title }}</div>
+              </div>
+              <p class="premium-card__desc">{{ c.description }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-12">
+          <div class="alert alert-info">No cards yet. Add cards in Admin.</div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- LINHA BRILHANTE -->
+  <div class="section-divider my-4"></div>
+
+  <!-- PARA QUEM ATENDEMOS -->
+  <section class="panel">
+    <div class="panel-title text-center">Para Quem Atendemos</div>
+    <div class="panel-subtitle text-center">Atendimento com excelência, em português.</div>
+
+    <div class="row g-3 mt-3">
+      <div class="col-md-4">
+        <div class="audience-card">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=70" alt="Famílias e Mães">
+          <div class="cap">Famílias &amp; Mães</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="audience-card">
+          <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=70" alt="Empresários">
+          <div class="cap">Empresários</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="audience-card">
+          <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1200&q=70" alt="Brasileiros nos EUA">
+          <div class="cap">Brasileiros nos EUA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINHA BRILHANTE -->
+  <div class="section-divider my-4"></div>
+
+  <!-- DEPOIMENTOS -->
+  <section class="panel">
+    <div class="panel-title text-center">Depoimentos de Clientes</div>
+    <div class="panel-subtitle text-center">Confiança construída com resultado.</div>
+
+    <div class="row g-3 mt-3">
+      <div class="col-md-4">
+        <div class="testimonial h-100">
+          “A Heller Finance transformou nosso planejamento financeiro. Atendimento de excelência!”
+          <div class="stars mt-3">★★★★★</div>
+          <div class="name">Marcos S.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial h-100">
+          “Clareza, estratégia e cuidado. Agora tenho paz sabendo que minha família está protegida.”
+          <div class="stars mt-3">★★★★★</div>
+          <div class="name">Patrícia R.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial h-100">
+          “Para quem mora nos EUA, o suporte em português fez toda diferença. Recomendo muito.”
+          <div class="stars mt-3">★★★★★</div>
+          <div class="name">André L.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINHA BRILHANTE -->
+  <div class="section-divider my-4"></div>
+
+  <!-- GALERIA -->
+  <section class="panel mb-4">
+    <div class="d-flex align-items-end justify-content-between gap-3 flex-wrap">
+      <div>
+        <div class="panel-title">Image Gallery</div>
+        <div class="panel-subtitle">A quick look at our customer-first approach.</div>
+      </div>
+      <a class="btn btn-outline-light btn-soft" href="/contact/">Talk to us</a>
+    </div>
+
+    <div class="row g-3 mt-3">
+      {% if gallery %}
+        {% for g in gallery %}
+        <div class="col-6 col-md-4 col-lg-3">
+          <img class="gallery-img" src="{{ g.image.url }}" alt="{{ g.title }}">
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-12">
+          <div class="alert alert-info">No gallery images yet. Add images in Admin.</div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+</div>
+{% endblock %}
