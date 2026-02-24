@@ -1,0 +1,2526 @@
+ body{
+
+  letter-spacing: .2px;
+
+}
+
+
+
+.panel{
+
+  padding: 22px;
+
+}
+
+
+
+.panel-title{
+
+  font-size: 1.65rem;
+
+}
+
+
+
+@media (max-width: 992px){
+
+  .panel{ padding: 18px; }
+
+  .panel-title{ font-size: 1.35rem; }
+
+}
+
+
+.hero-logo {
+  max-width: 190px;
+}
+
+@media (max-width: 768px){
+  .hero-logo {
+    max-width: 280px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .hero-logo{
+    max-width: 300px;
+  }
+}
+
+
+
+/* ===== Fundo da página (azul leve premium) ===== */
+
+.site-bg{
+
+  background: radial-gradient(1200px 600px at 50% -120px, rgba(212,175,55,.10), transparent 60%),
+
+              linear-gradient(180deg, #03141f 0%, #041e2c 35%, #03141f 100%);
+
+  min-height: 100vh;
+
+}
+
+
+
+/* Evita “brancos” no main */
+
+.page-wrap{
+
+  padding-bottom: 40px;
+
+}
+
+
+
+/* ===== NAV ===== */
+
+.navbar-premium{
+
+  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.15));
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,.06);
+
+}
+
+
+
+
+
+
+
+/* no celular aumenta */
+
+@media (max-width: 768px) {
+
+  .navbar-brand img,
+
+  .navbar .brand-logo {
+
+    height: 120px;      /* aumenta logo no mobile */
+
+  }
+
+}
+
+
+
+/* ===== Botão dourado ===== */
+
+.btn-gold{
+
+  background: linear-gradient(180deg, #E6C565, #D4AF37);
+
+  border: 0;
+
+  color: #08131c;
+
+  font-weight: 700;
+
+  padding: 10px 18px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.btn-gold:hover{ filter: brightness(1.03); }
+
+
+
+/* ===== HERO / CAROUSEL ===== */
+
+/* ===== FORÇA HERO BOX MENOR (resolve de vez) ===== */
+
+
+
+.hero-overlay{
+
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  display: flex !important;
+
+  align-items: flex-end !important;     /* joga pra baixo */
+
+  justify-content: flex-start !important; /* joga pra esquerda */
+
+  padding: 18px 18px 22px 22px !important; /* respiro nas bordas */
+
+  pointer-events: none; /* não atrapalha clicar no carousel */
+
+}
+
+
+
+.hero-box{
+
+  width: 360px !important;
+
+  max-width: 88% !important;
+
+  text-align: left !important;
+
+  padding: 14px 14px !important;
+
+  border-radius: 14px !important;
+
+
+
+  /* deixa visível sem tampar */
+
+  background: rgba(5, 22, 34, .55) !important;
+
+  border: 1px solid rgba(212,175,55,.18) !important;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.35) !important;
+
+  backdrop-filter: blur(6px) !important;
+
+
+
+  transform: none !important; /* remove o que jogou pra fora */
+
+  pointer-events: auto; /* permite clicar no botão */
+
+}
+
+
+
+.hero-logo{
+
+  width: 28px !important;
+
+  height: 28px !important;
+
+  margin-bottom: 8px !important;
+
+}
+
+
+
+.hero-brand{
+
+  font-size: 22px !important;
+
+  line-height: 1.1 !important;
+
+}
+
+
+
+.hero-text{
+
+  font-size: 0.92rem !important;
+
+  margin-top: 6px !important;
+
+  color: rgba(255,255,255,.88) !important;
+
+}
+
+
+
+.hero-cta{
+
+  margin-top: 10px !important;
+
+}
+
+
+
+.hero-cta .btn-gold{
+
+  padding: 8px 12px !important;
+
+  font-size: 0.9rem !important;
+
+}
+
+
+
+/* No celular: ainda menor */
+
+@media (max-width: 576px){
+
+  .hero-box{ width: 300px !important; padding: 12px !important; }
+
+  .hero-brand{ font-size: 20px !important; }
+
+  .hero-text{ font-size: 0.85rem !important; }
+
+}
+
+/* ===== Ajuste de altura do banner (carrossel) ===== */
+
+.hero-img{
+
+  height: 340px !important;   /* <= diminui aqui (ex: 300/320/360) */
+
+  object-fit: cover !important;
+
+}
+
+
+
+/* Desktop grande */
+
+@media (min-width: 1200px){
+
+  .hero-img{ height: 380px !important; }
+
+}
+
+
+
+/* Tablet */
+
+@media (max-width: 992px){
+
+  .hero-img{ height: 300px !important; }
+
+}
+
+
+
+/* Celular */
+
+@media (max-width: 576px){
+
+  .hero-img{ height: 240px !important; }
+
+}
+
+
+
+/* =========================================================
+
+   ✅ AQUI É O QUE VOCÊ QUER: SEM “BLOCO AZUL FORTE”
+
+   Painéis e cards ficam “soltos” no fundo azul, com leve vidro
+
+   ========================================================= */
+
+
+
+/* Painéis (mais leve, sem borda forte) */
+
+.panel{
+
+  background: rgba(255,255,255,.035);
+
+  border: 1px solid rgba(255,255,255,.04);
+
+  border-radius: 22px;
+
+  padding: 26px;
+
+  box-shadow: 0 14px 30px rgba(0,0,0,.20);
+
+}
+
+.panel-title{
+
+  color: #D4AF37;
+
+  font-weight: 800;
+
+  font-size: 1.8rem;
+
+}
+
+.panel-subtitle{
+
+  color: rgba(255,255,255,.75);
+
+  margin-top: 4px;
+
+}
+
+
+
+/* Mini serviços (sem borda forte) */
+
+.service-mini{
+
+  background: rgba(255,255,255,.025);
+
+  border: 1px solid rgba(255,255,255,.035);
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  height: 100%;
+
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+
+}
+
+.service-mini .icon{ font-size: 24px; margin-bottom: 8px; }
+
+.service-mini h4{ color: #fff; font-weight: 800; font-size: 1.1rem; }
+
+.service-mini p{ color: rgba(255,255,255,.72); margin: 0; }
+
+
+
+/* Cards premium (sem borda azul forte) */
+
+.premium-card{
+
+  background: rgba(255,255,255,.02);
+
+  border: 1px solid rgba(255,255,255,.035);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+
+}
+
+.premium-card__img{
+
+  width:100%;
+
+  height: 200px;
+
+  object-fit: cover;
+
+}
+
+.premium-card__body{ padding: 16px; }
+
+.premium-card__meta{
+
+  display:flex;
+
+  gap:10px;
+
+  align-items:center;
+
+  margin-bottom: 10px;
+
+}
+
+.premium-icon{
+
+  width: 30px;
+
+  height: 30px;
+
+  border-radius: 10px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background: rgba(212,175,55,.12);
+
+  border: 1px solid rgba(212,175,55,.25);
+
+  color:#D4AF37;
+
+}
+
+.premium-card__title{ color:#fff; font-weight: 800; }
+
+.premium-card__desc{ color: rgba(255,255,255,.72); margin: 0; }
+
+
+
+/* Audience cards (leve) */
+
+.audience-card{
+
+  border-radius: 18px;
+
+  overflow:hidden;
+
+  border: 1px solid rgba(255,255,255,.035);
+
+  background: rgba(255,255,255,.02);
+
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+
+}
+
+.audience-card img{
+
+  width:100%;
+
+  height: 170px;
+
+  object-fit: cover;
+
+}
+
+.audience-card .cap{
+
+  text-align:center;
+
+  padding: 10px 12px;
+
+  color:#fff;
+
+  font-weight: 800;
+
+  border-top: 1px solid rgba(255,255,255,.035);
+
+}
+
+
+
+/* Depoimentos (leve) */
+
+.testimonial{
+
+  background: rgba(255,255,255,.02);
+
+  border: 1px solid rgba(255,255,255,.035);
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  color: rgba(255,255,255,.85);
+
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+
+}
+
+.testimonial .stars{ color:#D4AF37; letter-spacing: .08em; }
+
+.testimonial .name{ margin-top: 6px; color:#fff; font-weight: 800; }
+
+
+
+/* Galeria */
+
+.gallery-img{
+
+  width: 100%;
+
+  height: 160px;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,.035);
+
+  box-shadow: 0 10px 20px rgba(0,0,0,.16);
+
+}
+
+.btn-soft{
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,.20);
+
+}
+
+
+
+/* ===== Footer premium ===== */
+
+.site-footer {
+
+  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.35));
+
+  padding: 60px 0 30px;
+
+  border-top: 1px solid rgba(255,255,255,.06);
+
+}
+
+.footer-box {
+
+  background: rgba(255,255,255,.02);
+
+  border: 1px solid rgba(255,255,255,.06);
+
+  border-radius: 22px;
+
+  padding: 34px;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.25);
+
+}
+
+.footer-title { color: #D4AF37; font-weight: 800; }
+
+.footer-text { color: rgba(255,255,255,.75); margin: 0; }
+
+.footer-link { color: rgba(255,255,255,.75); text-decoration: none; }
+
+.footer-link:hover { color: #D4AF37; transform: translateX(4px); }
+
+.footer-line { border-color: rgba(255,255,255,.08); margin: 26px 0; }
+
+.footer-bottom {
+
+  display:flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  color: rgba(255,255,255,.55);
+
+  font-size: .9rem;
+
+}
+
+
+
+/* ❌ REMOVIDO: essas regras quebravam tudo
+
+.card,
+
+[class*="card"],
+
+[class*="box"] {
+
+  background: transparent !important;
+
+}
+
+*/
+
+
+
+/* ===========================================
+
+   MODO "SOLTO": remove caixas escuras/azuis
+
+   Cole no FINAL do CSS
+
+=========================================== */
+
+
+
+/* blocos grandes (ex: Nossos Serviços, Para Quem Atendemos, Depoimentos) */
+
+.panel{
+
+  background: transparent !important;
+
+  border: 0 !important;
+
+  box-shadow: none !important;
+
+  padding: 0 !important;            /* deixa solto */
+
+}
+
+
+
+/* cards e mini-cards (serviços, premium, audience, depoimentos) */
+
+.service-mini,
+
+.premium-card,
+
+.audience-card,
+
+.testimonial{
+
+  background: transparent !important;
+
+  border: 0 !important;
+
+  box-shadow: none !important;
+
+}
+
+
+
+/* tira a “linha” interna que dá cara de bloco */
+
+.audience-card .cap{
+
+  border-top: 0 !important;
+
+}
+
+
+
+/* imagens continuam bonitas sem a borda azul forte */
+
+.gallery-img,
+
+.audience-card img,
+
+.premium-card__img{
+
+  border: 0 !important;
+
+  box-shadow: none !important;
+
+}
+
+
+
+/* só garante espaçamento entre itens (se ficar colado) */
+
+.premium-card__body{ padding: 12px 0 !important; }
+
+.testimonial{ padding: 12px 0 !important; }
+
+.service-mini{ padding: 12px 0 !important; }
+
+
+
+/* opcional: títulos com um “respiro” */
+
+.panel-title{ margin-top: 12px; }
+
+.panel-subtitle{ margin-bottom: 14px; }
+
+
+
+/* ================================
+
+   LINHA DIVISÓRIA PREMIUM (GLOW)
+
+================================ */
+
+
+
+.section-divider {
+
+  position: relative;
+
+  height: 1px;
+
+  margin: 50px 0;
+
+  background: linear-gradient(
+
+    to right,
+
+    transparent,
+
+    rgba(212, 175, 55, 0.2),
+
+    #D4AF37,
+
+    rgba(212, 175, 55, 0.2),
+
+    transparent
+
+  );
+
+}
+
+
+
+/* brilho suave */
+
+.section-divider::after {
+
+  content: "";
+
+  position: absolute;
+
+  top: -6px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 180px;
+
+  height: 12px;
+
+  background: radial-gradient(circle, rgba(212,175,55,.35), transparent 70%);
+
+  filter: blur(6px);
+
+}
+
+
+
+/* ===== Linha dourada luminosa no TOPO (navbar) ===== */
+
+.navbar-premium::after{
+
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 10%;
+
+  width: 80%;
+
+  height: 2px;
+
+  background: linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(212,175,55,0.3),
+
+    #D4AF37,
+
+    rgba(212,175,55,0.3),
+
+    transparent
+
+  );
+
+  box-shadow: 0 0 12px rgba(212,175,55,.6);
+
+}
+
+
+
+/* Garante que a navbar aceite pseudo-elemento */
+
+.navbar-premium{
+
+  position: relative;
+
+}
+
+
+
+/* ===== Linha dourada luminosa no RODAPÉ ===== */
+
+.site-footer::before{
+
+  content: "";
+
+  display: block;
+
+  width: 80%;
+
+  height: 2px;
+
+  margin: 0 auto 25px auto;
+
+  background: linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(212,175,55,0.3),
+
+    #D4AF37,
+
+    rgba(212,175,55,0.3),
+
+    transparent
+
+  );
+
+  box-shadow: 0 0 14px rgba(212,175,55,.6);
+
+}
+
+
+
+/* Logo maior e alinhada na navbar */
+
+.navbar-premium .navbar-brand{
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 6px 0;
+
+}
+
+
+
+.navbar-premium .navbar-brand img{
+
+  height: 68px !important;      /* ajuste aqui: 48-60 fica ótimo */
+
+  width: auto;
+
+  object-fit: contain;
+
+}
+
+
+
+/* Em telas pequenas */
+
+@media (max-width: 768px){
+
+  .navbar-premium .navbar-brand img{
+
+    height: 68px !important;
+
+  }
+
+}
+
+
+
+/* Carrossel com altura menor (responsivo) */
+
+.hero-img{
+
+  height: clamp(280px, 45vh, 420px);
+
+  object-fit: cover;
+
+}
+
+
+
+/* =========================
+
+   BRILHO (só TOPO e RODAPÉ)
+
+   ========================= */
+
+
+
+/* garante que os pseudo-elements fiquem no lugar certo */
+
+.navbar-premium,
+
+.site-footer{
+
+  position: relative;
+
+}
+
+
+
+/* ---- TOPO (Navbar) ---- */
+
+.navbar-premium::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0; right:0;
+
+  bottom:-1px;                 /* encosta no fim da navbar */
+
+  height:2px;                  /* espessura da linha */
+
+  background: linear-gradient(90deg,
+
+    transparent 0%,
+
+    rgba(212,175,55,0) 35%,
+
+    rgba(212,175,55,.95) 50%,
+
+    rgba(212,175,55,0) 65%,
+
+    transparent 100%
+
+  );
+
+  filter: blur(.2px);
+
+  opacity: .85;
+
+  pointer-events:none;
+
+  animation: none !important;
+
+}
+
+
+
+/* glow suave por baixo (opcional, fica lindo) */
+
+.navbar-premium::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0; right:0;
+
+  bottom:-10px;
+
+  height:22px;
+
+  background: radial-gradient(60% 100% at 50% 0%,
+
+    rgba(212,175,55,.20),
+
+    transparent 70%
+
+  );
+
+  opacity:.35;
+
+  pointer-events:none;
+
+}
+
+
+
+/* ---- RODAPÉ (Footer) ---- */
+
+.site-footer::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0; right:0;
+
+  top:-1px;                    /* linha no topo do footer */
+
+  height:2px;
+
+  background: linear-gradient(90deg,
+
+    transparent 0%,
+
+    rgba(212,175,55,0) 35%,
+
+    rgba(212,175,55,.95) 50%,
+
+    rgba(212,175,55,0) 65%,
+
+    transparent 100%
+
+  );
+
+  filter: blur(.2px);
+
+  opacity: .85;
+
+  pointer-events:none;
+
+  animation: none !important;
+
+}
+
+
+
+/* glow suave do footer (opcional) */
+
+.site-footer::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0; right:0;
+
+  top:-18px;
+
+  height:26px;
+
+  background: radial-gradient(60% 100% at 50% 100%,
+
+    rgba(212,175,55,.20),
+
+    transparent 70%
+
+  );
+
+  opacity:.35;
+
+  pointer-events:none;
+
+}
+
+
+
+/* animação do brilho "correndo" */
+
+@keyframes shine-line{
+
+  0%   { transform: translateX(-40%); }
+
+  100% { transform: translateX(40%); }
+
+
+
+  
+
+}
+
+
+
+/* =========================
+
+   MOBILE REFINADO (final)
+
+========================= */
+
+@media (max-width: 768px){
+
+
+
+  /* Altura do banner */
+
+  .hero-img{
+
+    height: 240px !important;
+
+    object-fit: cover;
+
+  }
+
+
+
+  /* Overlay */
+
+  .hero-overlay{
+
+    align-items: flex-end;
+
+    padding: 10px;
+
+  }
+
+
+
+  /* Caixa do texto */
+
+  .hero-box{
+
+    width: 92%;
+
+    padding: 10px 12px;
+
+    border-radius: 12px;
+
+    background: rgba(5, 22, 34, 0.40);
+
+    backdrop-filter: blur(4px);
+
+  }
+
+
+
+  /* Logo */
+
+  .hero-logo{
+
+    width: 34px;
+
+    height: 34px;
+
+    margin-bottom: 4px;
+
+  }
+
+
+
+  /* Título */
+
+  .hero-brand{
+
+    font-size: 16px;
+
+    letter-spacing: .04em;
+
+  }
+
+
+
+  /* Texto */
+
+  .hero-text{
+
+    font-size: 0.85rem;
+
+    line-height: 1.2;
+
+  }
+
+
+
+  /* Botão */
+
+  .btn-gold{
+
+    padding: 6px 12px;
+
+    font-size: 0.85rem;
+
+    border-radius: 8px;
+
+  }
+
+
+
+  /* Espaçamento geral */
+
+  .container.my-4{
+
+    margin-top: 10px !important;
+
+  }
+
+}
+
+
+
+/* Celulares muito pequenos */
+
+@media (max-width: 480px){
+
+
+
+  .hero-img{
+
+    height: 210px !important;
+
+  }
+
+
+
+  .hero-box{
+
+    padding: 8px 10px;
+
+  }
+
+
+
+  .hero-brand{
+
+    font-size: 15px;
+
+  }
+
+
+
+  .hero-text{
+
+    font-size: 0.8rem;
+
+  }
+
+}
+
+
+
+.navbar-premium{
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1030;
+
+  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.18));
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(212,175,55,.14);
+
+}
+
+
+
+/* Linha dourada fixa no topo (sem animação) */
+
+.navbar-premium::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0; right:0; bottom:-1px;
+
+  height:1px;
+
+  background: linear-gradient(to right, transparent, rgba(212,175,55,.55), transparent);
+
+  opacity:.9;
+
+}
+
+
+
+.offcanvas{
+
+  background: linear-gradient(180deg, rgba(3,20,31,.98), rgba(4,30,44,.98));
+
+  border-left: 1px solid rgba(212,175,55,.16);
+
+}
+
+.offcanvas .nav-link{ color: rgba(255,255,255,.85); }
+
+.offcanvas .nav-link:hover{ color:#D4AF37; }
+
+
+
+/* ===== HERO / CAROUSEL (premium + responsivo) ===== */
+
+
+
+/* altura controlada (não fica gigante) */
+
+.hero-img{
+
+  height: 420px;          /* desktop */
+
+  object-fit: cover;
+
+}
+
+
+
+/* tablet */
+
+@media (max-width: 992px){
+
+  .hero-img{ height: 340px; }
+
+}
+
+
+
+/* mobile */
+
+@media (max-width: 576px){
+
+  .hero-img{ height: 260px; }
+
+}
+
+
+
+/* caixa do texto menor e sem tampar a foto */
+
+.hero-box{
+
+  width: min(520px, 86%);
+
+  padding: 16px 16px;
+
+  border-radius: 16px;
+
+  background: rgba(5, 22, 34, .42);
+
+  border: 1px solid rgba(212,175,55,.18);
+
+  box-shadow: 0 16px 40px rgba(0,0,0,.28);
+
+  backdrop-filter: blur(6px);
+
+}
+
+
+
+/* posiciona no canto inferior esquerdo (mais “premium”) */
+
+.hero-overlay{
+
+  align-items: flex-end;
+
+  justify-content: flex-start;
+
+  padding: 22px;
+
+}
+
+
+
+/* mobile: menor ainda */
+
+@media (max-width: 576px){
+
+  .hero-overlay{ padding: 14px; }
+
+  .hero-box{
+
+    width: min(360px, 92%);
+
+    padding: 12px 12px;
+
+  }
+
+  .hero-brand{ font-size: 18px; }
+
+  .hero-text{ font-size: .92rem; }
+
+  .btn-gold{ padding: 8px 14px; border-radius: 10px; }
+
+}
+
+
+
+/* setas discretas em “bolha” */
+
+.carousel-control-prev,
+
+.carousel-control-next{
+
+  width: 56px;
+
+  opacity: 1;
+
+}
+
+
+
+.carousel-control-prev-icon,
+
+.carousel-control-next-icon{
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 999px;
+
+  background-color: rgba(0,0,0,.28);
+
+  border: 1px solid rgba(255,255,255,.14);
+
+  backdrop-filter: blur(6px);
+
+  background-size: 55% 55%;
+
+}
+
+
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+
+.carousel-control-next:hover .carousel-control-next-icon{
+
+  background-color: rgba(0,0,0,.38);
+
+  border-color: rgba(212,175,55,.22);
+
+}
+
+
+
+/* bolinhas do carousel */
+
+.carousel-indicators{
+
+  margin-bottom: 10px;
+
+}
+
+.carousel-indicators [data-bs-target]{
+
+  width: 22px;
+
+  height: 4px;
+
+  border-radius: 999px;
+
+  opacity: .35;
+
+  background-color: #fff;
+
+}
+
+.carousel-indicators .active{
+
+  opacity: .9;
+
+  background-color: #D4AF37;
+
+}
+
+
+
+/* garante que overlay sempre aparece por cima */
+
+.carousel-item{
+
+  position: relative;
+
+}
+
+
+
+/* =========================
+
+   ABOUT (padrão premium)
+
+   ========================= */
+
+
+
+/* sessão “hero” do About */
+
+.about-hero{
+
+  padding: 42px 0 10px;
+
+}
+
+
+
+/* painel leve (sem aquele azul forte de bloco) */
+
+.about-panel{
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.06);
+
+  border-radius: 22px;
+
+  padding: 28px;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.22);
+
+}
+
+
+
+/* texto e título legíveis no fundo escuro */
+
+.about-title{
+
+  color: #D4AF37;
+
+  font-weight: 900;
+
+  letter-spacing: .02em;
+
+  margin-bottom: 10px;
+
+  font-size: clamp(24px, 3vw, 40px);
+
+}
+
+.about-text{
+
+  color: rgba(255,255,255,.80);
+
+  line-height: 1.6;
+
+  margin: 0 0 14px;
+
+}
+
+
+
+/* cards pequenos (sem branco) */
+
+.about-pill{
+
+  background: rgba(0,0,0,.18);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 16px;
+
+  padding: 14px 14px;
+
+  height: 100%;
+
+}
+
+.about-pill h6{
+
+  color: #fff;
+
+  font-weight: 900;
+
+  margin: 0 0 4px;
+
+  font-size: 1rem;
+
+}
+
+.about-pill p{
+
+  color: rgba(255,255,255,.72);
+
+  margin: 0;
+
+  font-size: .92rem;
+
+}
+
+
+
+/* imagem premium */
+
+.about-media{
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,.10);
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+
+  background: rgba(0,0,0,.18);
+
+}
+
+.about-media img{
+
+  width: 100%;
+
+  height: 360px;
+
+  object-fit: cover;
+
+  display: block;
+
+}
+
+
+
+/* responsivo */
+
+@media (max-width: 992px){
+
+  .about-media img{ height: 280px; }
+
+  .about-panel{ padding: 20px; }
+
+}
+
+
+
+@media (max-width: 576px){
+
+  .about-hero{ padding-top: 22px; }
+
+  .about-media img{ height: 220px; }
+
+}
+
+
+
+/* botão dourado (usa o seu .btn-gold) */
+
+.about-actions .btn{
+
+  border-radius: 12px;
+
+}
+
+
+
+.plans-hero{
+
+  padding: 42px 0 20px;
+
+}
+
+
+
+.plans-panel{
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.06);
+
+  border-radius: 22px;
+
+  padding: 28px;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.22);
+
+}
+
+
+
+.plans-title{
+
+  color: #D4AF37;
+
+  font-weight: 900;
+
+  letter-spacing: .02em;
+
+  margin-bottom: 6px;
+
+  text-align: center;
+
+  font-size: clamp(22px, 3vw, 40px);
+
+}
+
+.plans-subtitle{
+
+  color: rgba(255,255,255,.75);
+
+  text-align: center;
+
+  margin: 0;
+
+}
+
+
+
+/* cards de plano */
+
+.plan-card{
+
+  background: rgba(0,0,0,.18);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  height: 100%;
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.22);
+
+}
+
+
+
+.plan-card--featured{
+
+  border-color: rgba(212,175,55,.22);
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.30);
+
+  position: relative;
+
+}
+
+.plan-card--featured::before{
+
+  content: "Mais Popular";
+
+  position: absolute;
+
+  top: 14px;
+
+  right: 14px;
+
+  background: rgba(212,175,55,.16);
+
+  border: 1px solid rgba(212,175,55,.30);
+
+  color: #D4AF37;
+
+  font-weight: 800;
+
+  font-size: .78rem;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+}
+
+
+
+.plan-name{
+
+  color: #fff;
+
+  font-weight: 900;
+
+  font-size: 1.15rem;
+
+  margin-bottom: 6px;
+
+}
+
+.plan-desc{
+
+  color: rgba(255,255,255,.75);
+
+  margin: 0 0 10px;
+
+}
+
+
+
+.plan-list{
+
+  color: rgba(255,255,255,.78);
+
+  padding-left: 1.2rem;
+
+  margin: 0 0 14px;
+
+}
+
+.plan-list li{ margin: 6px 0; }
+
+
+
+.plan-actions .btn{
+
+  border-radius: 12px;
+
+}
+
+
+
+/* botão outline no tema */
+
+.btn-outline-gold{
+
+  border: 1px solid rgba(212,175,55,.50);
+
+  color: #D4AF37;
+
+  background: transparent;
+
+  font-weight: 800;
+
+}
+
+.btn-outline-gold:hover{
+
+  background: rgba(212,175,55,.10);
+
+  color: #D4AF37;
+
+}
+
+
+
+/* responsivo */
+
+@media (max-width: 576px){
+
+  .plans-panel{ padding: 18px; }
+
+}
+
+
+
+.contact-hero{
+
+  padding: 42px 0 24px;
+
+}
+
+
+
+.contact-grid{
+
+  display: grid;
+
+  grid-template-columns: 420px 1fr;
+
+  gap: 24px;
+
+  align-items: start;
+
+}
+
+
+
+@media (max-width: 992px){
+
+  .contact-grid{ grid-template-columns: 1fr; }
+
+}
+
+
+
+/* painel premium */
+
+.contact-panel{
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.06);
+
+  border-radius: 22px;
+
+  padding: 26px;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.22);
+
+}
+
+
+
+/* títulos */
+
+.contact-title{
+
+  color: #D4AF37;
+
+  font-weight: 900;
+
+  font-size: clamp(22px, 2.8vw, 40px);
+
+  margin: 0 0 6px;
+
+}
+
+.contact-subtitle{
+
+  color: rgba(255,255,255,.78);
+
+  margin: 0 0 16px;
+
+}
+
+
+
+/* card info */
+
+.contact-info{
+
+  background: rgba(0,0,0,.16);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  color: rgba(255,255,255,.82);
+
+}
+
+.contact-info h6{
+
+  color: #fff;
+
+  font-weight: 900;
+
+  margin: 0 0 4px;
+
+}
+
+.contact-info p{
+
+  margin: 0 0 12px;
+
+  color: rgba(255,255,255,.74);
+
+}
+
+
+
+/* form premium */
+
+.form-premium label{
+
+  color: rgba(255,255,255,.85);
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+
+}
+
+
+
+.form-premium .form-control{
+
+  background: rgba(0,0,0,.18);
+
+  border: 1px solid rgba(255,255,255,.10);
+
+  border-radius: 14px;
+
+  color: rgba(255,255,255,.92);
+
+  padding: 12px 14px;
+
+}
+
+
+
+.form-premium .form-control::placeholder{
+
+  color: rgba(255,255,255,.45);
+
+}
+
+
+
+.form-premium .form-control:focus{
+
+  background: rgba(0,0,0,.22);
+
+  color: rgba(255,255,255,.95);
+
+  border-color: rgba(212,175,55,.45);
+
+  box-shadow: 0 0 0 .20rem rgba(212,175,55,.15);
+
+}
+
+
+
+.contact-actions .btn{
+
+  border-radius: 12px;
+
+}
+
+
+
+.btn-whatsapp{
+
+  background: rgba(37,211,102,.18);
+
+  border: 1px solid rgba(37,211,102,.35);
+
+  color: #eafff3;
+
+  font-weight: 800;
+
+}
+
+.btn-whatsapp:hover{
+
+  filter: brightness(1.05);
+
+}
+
+
+
+/* =========================
+
+   QUOTE (padrão premium)
+
+   ========================= */
+
+
+
+.quote-wrap{
+
+  padding: 44px 0 24px;
+
+}
+
+
+
+/* painel igual contact */
+
+.quote-panel{
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.06);
+
+  border-radius: 22px;
+
+  padding: 26px;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,.22);
+
+  max-width: 980px;
+
+  margin: 0 auto;
+
+}
+
+
+
+/* títulos */
+
+.quote-title{
+
+  color: #D4AF37;
+
+  font-weight: 900;
+
+  font-size: clamp(22px, 2.6vw, 38px);
+
+  margin: 0 0 6px;
+
+  text-align: center;
+
+}
+
+.quote-subtitle{
+
+  color: rgba(255,255,255,.78);
+
+  margin: 0 0 18px;
+
+  text-align: center;
+
+}
+
+
+
+/* form premium (reaproveita padrão) */
+
+.form-premium label{
+
+  color: rgba(255,255,255,.85);
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+
+}
+
+
+
+.form-premium .form-control,
+
+.form-premium .form-select{
+
+  background: rgba(0,0,0,.18);
+
+  border: 1px solid rgba(255,255,255,.10);
+
+  border-radius: 14px;
+
+  color: rgba(255,255,255,.92);
+
+  padding: 12px 14px;
+
+}
+
+
+
+.form-premium .form-control::placeholder{
+
+  color: rgba(255,255,255,.45);
+
+}
+
+
+
+.form-premium .form-control:focus,
+
+.form-premium .form-select:focus{
+
+  background: rgba(0,0,0,.22);
+
+  color: rgba(255,255,255,.95);
+
+  border-color: rgba(212,175,55,.45);
+
+  box-shadow: 0 0 0 .20rem rgba(212,175,55,.15);
+
+}
+
+
+
+/* ações */
+
+.quote-actions .btn{
+
+  border-radius: 12px;
+
+}
+
+.quote-note{
+
+  color: rgba(255,255,255,.55);
+
+  font-size: .9rem;
+
+  margin-top: 12px;
+
+}
+
+
+
+/* botão secundário */
+
+.btn-outline-soft{
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,.20);
+
+  color: rgba(255,255,255,.85);
+
+}
+
+.btn-outline-soft:hover{
+
+  border-color: rgba(212,175,55,.45);
+
+  color: #D4AF37;
+
+}
+
+/* ===== Depoimentos (Home) ===== */
+.testimonial-card{
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,.55);
+  background: rgba(255,255,255,.07);  /* mais claro que .03 */
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  backdrop-filter: blur(6px);
+  min-height: 150px;
+}
+
+.testimonial-name{
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: 1.05rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,.45);
+}
+
+.testimonial-text{
+  color: rgba(255,255,255,.92);
+  margin-top: 10px;
+  line-height: 1.35;
+  font-size: .98rem;
+}
+
+/* estrelas mais vivas */
+.testimonial-stars{
+  color: #D4AF37;
+  text-shadow: 0 1px 6px rgba(0,0,0,.45);
+}
+
+/* === PARCEIRO / SEGURADORA === */
+.partner-panel {
+  padding: 28px;
+}
+
+.partner-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.partner-logo-box {
+  background: #0b1f33;
+  padding: 1px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(212,175,55,.25);
+  flex-shrink: 0;
+}
+
+.partner-logo {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,.35));
+}
+
+.partner-text {
+  flex: 1;
+}
+
+.partner-desc {
+  opacity: .95;
+  line-height: 1.65;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .partner-wrap {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .partner-logo {
+    width: 300px; /* 🔥 maior no celular */
+  }
+
+  .partner-text {
+    flex-basis: 100%;
+  }
+}
+
+/* =========================
+   FIX MOBILE: bloco não tampa o banner
+   Cole NO FINAL do CSS
+========================= */
+@media (max-width: 768px){
+
+  /* garante que o banner apareça */
+  .hero-overlay,
+  .hero-overlay--mobile{
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    /* NÃO cobrir tudo */
+    height: auto !important;
+    inset: auto !important;
+
+    /* deixa só a caixinha ter fundo */
+    background: transparent !important;
+
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+
+    padding: 10px !important;
+  }
+
+  /* a caixa fica pequena */
+  .hero-box,
+  .hero-box--mobile{
+    width: min(320px, 92%) !important;
+    max-width: 92% !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+
+    background: rgba(5, 22, 34, 0.40) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  /* banner não precisa ser alto */
+  .hero-img{
+    height: 240px !important;
+    object-fit: cover !important;
+  }
+}
+
+@media (max-width: 480px){
+  .hero-img{
+    height: 210px !important;
+  }
+  .hero-box,
+  .hero-box--mobile{
+    width: min(300px, 94%) !important;
+    padding: 8px 10px !important;
+  }
+}
+
+/* =========================
+   FIX LOGO NO HERO (MOBILE)
+   Cole NO FINAL do CSS
+========================= */
+
+/* desktop (opcional, mantém ok) */
+.hero-logo{
+  width: auto !important;
+  height: auto !important;
+  max-width: 190px !important;
+}
+
+/* mobile */
+@media (max-width: 768px){
+  .hero-logo{
+    width: auto !important;
+    height: auto !important;
+    max-width: 240px !important;  /* aumenta aqui */
+  }
+}
+
+/* mobile pequeno */
+@media (max-width: 480px){
+  .hero-logo{
+    width: auto !important;
+    height: auto !important;
+    max-width: 260px !important;  /* aumenta aqui */
+  }
+}
+
+/* =========================
+   FIX LOGO NO TOPO (NAVBAR)
+   Cole NO FINAL do CSS
+========================= */
+
+/* garante que o seletor pegue a logo do topo */
+.navbar-premium .navbar-brand img,
+.navbar-premium .navbar-brand .brand-logo,
+.navbar-premium .navbar-brand svg{
+  height: 72px !important;     /* desktop */
+  width: auto !important;
+  max-height: none !important;
+}
+
+/* mobile */
+@media (max-width: 768px){
+  .navbar-premium .navbar-brand img,
+  .navbar-premium .navbar-brand .brand-logo,
+  .navbar-premium .navbar-brand svg{
+    height: 110px !important;  /* aumenta aqui */
+  }
+
+  .navbar-premium .navbar-brand{
+    padding: 6px 0 !important;
+  }
+}
+
+/* mobile pequeno */
+@media (max-width: 480px){
+  .navbar-premium .navbar-brand img,
+  .navbar-premium .navbar-brand .brand-logo,
+  .navbar-premium .navbar-brand svg{
+    height: 120px !important;  /* aumenta aqui */
+  }
+}
+
+@media (min-width: 992px){
+  .navbar-premium .navbar-brand img{
+    height: 160px !important;
+  }
+}
+
+/* =========================
+   HERO BOX SUPER TRANSPARENTE
+========================= */
+
+.hero-box{
+  background: rgba(5, 22, 34, 0.12) !important;  /* bem transparente */
+  backdrop-filter: blur(12px) !important;        /* efeito vidro */
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,.25) !important;
+}
+
+.wa-float{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(37,211,102,.18);
+  border: 1px solid rgba(37,211,102,.45);
+  color: #eafff3;
+  font-weight: 900;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+.wa-float:hover{
+  filter: brightness(1.05);
+}
+
+/* ===== WhatsApp Floating Button ===== */
+.wa-float{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  border-radius: 999px;
+
+  background: rgba(37, 211, 102, .95);
+  color: #0b1f33;
+  font-weight: 900;
+  text-decoration: none;
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.28);
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.wa-float:hover{
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.wa-float__icon{
+  font-size: 18px;
+  line-height: 1;
+}
+
+.wa-float__text{
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+
+/* no mobile: mostra só o botão redondo */
+@media (max-width: 576px){
+  .wa-float{
+    padding: 14px;
+  }
+  .wa-float__text{
+    display: none;
+  }
+}
+
+/* ===== WhatsApp Floating Official Style ===== */
+.wa-float{
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #25D366;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  transition: all .3s ease;
+}
+
+.wa-float:hover{
+  transform: scale(1.08);
+}
+
+.wa-icon{
+  width: 36px;
+  height: 36px;
+}
+.wa-float{
+  text-decoration: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+/* ===== Instagram Floating Button ===== */
+.ig-float{
+  position: fixed;
+  right: 22px;
+  bottom: 100px; /* Fica acima do WhatsApp */
+  z-index: 9998;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%,
+    #fdf497 0%, #fdf497 5%,
+    #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  transition: all .3s ease;
+}
+
+.ig-float:hover{
+  transform: scale(1.08);
+}
+
+.ig-icon{
+  width: 28px;
+  height: 28px;
+}

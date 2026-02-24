@@ -1,0 +1,59 @@
+
+
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}LifeSecure | Sobre{% endblock %}
+
+{% block content %}
+<div class="container about-hero">
+
+  <section class="about-panel">
+    <div class="row align-items-center g-4">
+
+      <!-- TEXTO -->
+      <div class="col-lg-6">
+        <h1 class="about-title">Sobre Heller Finance</h1>
+
+        <p class="about-text">
+          Protegendo o futuro da sua família com estratégia e propósito.
+          Nossa missão é tornar o planejamento financeiro claro, acessível e seguro.
+        </p>
+
+        <p class="about-text">
+          Trabalhamos com orientação personalizada, foco em proteção familiar e soluções sob medida
+          para quem vive nos EUA e prefere atendimento em português.
+        </p>
+
+        <div class="row g-3 mt-3">
+          <div class="col-md-6">
+            <div class="about-pill">
+              <h6>Orientação confiável</h6>
+              <p>Suporte por telefone ou e-mail</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-pill">
+              <h6>Planos flexíveis</h6>
+              <p>Opções alinhadas ao seu objetivo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-actions mt-4 d-flex gap-2 flex-wrap">
+          <a class="btn btn-gold" href="/quote/">Obter uma Cotação</a>
+          <a class="btn btn-outline-light btn-soft" href="/contact/">Agendar uma conversa</a>
+        </div>
+      </div>
+
+      <!-- IMAGEM -->
+      <div class="col-lg-6">
+        <div class="about-media">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=70" alt="About Heller Finance">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+{% endblock %}

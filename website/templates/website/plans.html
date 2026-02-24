@@ -1,0 +1,102 @@
+
+
+
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}LifeSecure | Plans{% endblock %}
+
+{% block content %}
+<div class="container plans-hero">
+
+  <section class="plans-panel">
+    <h1 class="plans-title">Planos  e Cobertura</h1>
+    <p class="plans-subtitle">Escolha um plano que se encaixe na sua família e no seu orçamento.</p>
+
+    <div class="row g-4 mt-3">
+
+      <!-- Term Life -->
+      <div class="col-md-6 col-lg-4">
+        <div class="plan-card">
+          <div class="plan-name">Term Life</div>
+          <p class="plan-desc"> O Term Life é um seguro de vida com prazo determinado — normalmente 10, 20 ou 30 anos.</p>
+
+          <ul class="plan-list">
+            <li>Como funciona Você paga um valor mensal fixo. Se algo acontecer dentro do período contratado, seus beneficiários recebem o benefício livre de imposto. Se o prazo terminar e não houver sinistro, a cobertura se encerra.</li>
+            <li>Indicado para</li>
+             <p>✔ Proteção de financiamento imobiliário (mortgage)</p>
+            <p>✔ Substituição de renda</p>
+             <p>✔ Famílias com filhos pequenos</p>
+              <p>✔ Proteção de dívida</p>
+               <p>✔ Obrigações financeiras temporárias</p>
+              <p> É uma solução simples, acessível e eficiente para proteção temporária.</p>
+          </ul>
+
+          <div class="plan-actions d-flex gap-2 flex-wrap">
+            <a href="/quote/" class="btn btn-outline-gold">Obter uma Cotação</a>
+            <a href="/contact/" class="btn btn-outline-light btn-soft">Fale Conosco</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whole Life (featured) -->
+      <div class="col-md-6 col-lg-4">
+        <div class="plan-card plan-card--featured">
+          <div class="plan-name">Annuities</div>
+          <p class="plan-desc">Renda garantida para aposentadoria</p>
+            <p class="plan-desc">Annuities são contratos com seguradoras criados para transformar seu patrimônio em renda futura previsível.</p>
+            <p class="plan-desc">São utilizadas para proteger capital, reduzir risco de mercado e gerar renda garantida na aposentadoria.</p>
+            <p class="plan-desc">Como Funcionam
+
+Você investe um valor único ou contribui ao longo do tempo.
+O dinheiro cresce com diferimento fiscal (tax-deferred).
+</p>
+</p>
+          <ul class="plan-list">
+            <li>No futuro, pode ser estruturado para:</li>
+            <p>✔ Gerar renda mensal garantida</p>
+            <p>✔ Proteger o principal</p>
+            <p>✔ Complementar 401(k) e IRA</p>
+            <p>✔ Trazer mais previsibilidade financeira</p>
+          </ul>
+
+          <div class="plan-actions d-flex gap-2 flex-wrap">
+            <a href="/contact/" class="btn btn-outline-gold">Agendar uma conversa</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Universal Life -->
+      <div class="col-md-6 col-lg-4">
+        <div class="plan-card">
+          <div class="plan-name">Indexed Universal Life (IUL)</div>
+          <p class="plan-desc">Proteção permanente com estratégia financeira</p>
+             <p class="plan-desc">Diferente de um seguro tradicional, ele pode ser estruturado como ferramenta estratégica de crescimento patrimonial</p>
+
+          <ul class="plan-list">
+            <li>Como funciona</li>
+            <li>Parte do pagamento cobre o custo do seguro.
+A outra parte acumula valor dentro da apólice.</li>
+            <li>Esse valor pode:
+ Crescer com base em índices de mercado
+Ter proteção contra perdas (normalmente com piso de 0%)
+Acumular de forma vantajosa do ponto de vista tributário
+</li>
+             <li>Principais Benefícios</li>
+              <p>✔ Proteção vitalícia</p>
+               <p>✔ Potencial de crescimento atrelado a índice</p>
+                <p>✔ Possibilidade de renda complementar na aposentadoria* LIVRE DE IMPOSTOS</p>
+                 <p>✔ Benefícios em vida (em casos de doença crônica, crítica ou terminal, quando incluídos)</p>
+                 <p>✔ Ferramenta para planejamento empresarial e sucessório</li>
+          </ul>
+
+          <div class="plan-actions d-flex gap-2 flex-wrap">
+            <a href="/contact/" class="btn btn-outline-gold">Agendar uma conversa</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+{% endblock %}

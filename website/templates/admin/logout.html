@@ -1,0 +1,20 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block content %}
+<form method="post" action="{% url 'admin:logout' %}">
+  {% csrf_token %}
+
+  <input type="hidden" name="next" value="{% url 'admin:login' %}">
+
+  <p style="margin: 0 0 14px 0;">{% trans "Tem certeza que deseja sair?" %}</p>
+
+  <button type="submit" class="btn btn-danger">
+    {% trans "Sair" %}
+  </button>
+
+  <a href="{% url 'admin:index' %}" class="btn btn-secondary" style="margin-left: 10px;">
+    {% trans "Cancelar" %}
+  </a>
+</form>
+{% endblock %}

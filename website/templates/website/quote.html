@@ -1,0 +1,183 @@
+
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}Heller Finance | Abter uma Cota{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+  <div class="panel" style="max-width: 980px; margin: 0 auto;">
+    <h2 class="panel-title text-center">Obter uma Cotação</h2>
+    <p class="panel-subtitle text-center">Preencha e veja o valor mensal automaticamente.</p>
+
+    <form method="post" id="quoteForm" class="mt-4">
+      {% csrf_token %}
+
+      <div class="row g-3">
+
+        <div class="col-md-6">
+          <label class="form-label text-white-50">Nome completo</label>
+          <input name="full_name" class="form-control" placeholder="Seu nome" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label text-white-50">Email</label>
+          <input name="email" type="email" class="form-control" placeholder="voce@email.com" required>
+        </div>
+
+        <!-- ✅ TELEFONE (corrigido HTML) -->
+        <div class="col-md-6">
+          <label class="form-label text-white-50">Telefone</label>
+          <input name="phone" type="tel" class="form-control" placeholder="Ex: +1 (..)999-9999" required>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Gênero</label>
+          <select name="gender" id="gender" class="form-select" required>
+            <option value="">Selecione</option>
+            <option value="F">Mulher</option>
+            <option value="M">Homem</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Idade</label>
+          <input name="age" id="age" type="number" class="form-control" min="0" max="120" placeholder="Ex: 35" required>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Valor do Seguro</label>
+          <select name="coverage" id="coverage" class="form-select" required>
+            <option value="">Selecione</option>
+            <option value="1000000">1.000.000</option>
+            <option value="700000">700.000</option>
+            <option value="500000">500.000</option>
+            <option value="300000">300.000</option>
+          </select>
+        </div>
+
+        <!-- ✅ SMOKER (0 = não, 1 = sim) -->
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Fumante?</label>
+          <select name="smoker" id="smoker" class="form-select" required>
+            <option value="0">Não</option>
+            <option value="1">Sim</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label text-white-50">Saúde</label>
+          <select name="health" id="health" class="form-select" required>
+            <option value="OK">Sem problemas</option>
+            <option value="LIGHT">Leve</option>
+            <option value="MED">Moderado</option>
+            <option value="HIGH">Grave</option>
+          </select>
+        </div>
+
+        <div class="col-md-12">
+          <label class="form-label text-white-50">Detalhes (se tiver algo importante)</label>
+          <textarea name="health_details" class="form-control" rows="3"
+            placeholder="Ex: pressão alta, diabetes, etc (opcional)"></textarea>
+        </div>
+
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mt-4">
+        <div class="text-white">
+          <div style="opacity:.8;">Valor mensal estimado:</div>
+          <div id="monthlyValue" style="font-size: 28px; font-weight: 900; color:#D4AF37;">—</div>
+          <div id="calcHint" style="opacity:.65; font-size:.9rem;">Selecione gênero, idade e cobertura.</div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-gold" type="submit">Solicitar orçamento</button>
+          <a class="btn btn-outline-light btn-soft" href="/plans/">Compare planos</a>
+        </div>
+      </div>
+
+      <div class="mt-3" style="opacity:.7; font-size:.9rem;">
+        Respeitamos sua privacidade. Sem spam. Sem pressão.
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const gender = document.getElementById("gender");
+  const age = document.getElementById("age");
+  const cov = document.getElementById("coverage");
+  const smoker = document.getElementById("smoker");
+  const health = document.getElementById("health");
+
+  const out = document.getElementById("monthlyValue");
+  const hint = document.getElementById("calcHint");
+
+  function parsePrice(v) {
+    const s = String(v ?? "").trim().replace(/[^\d.,-]/g, "").replace(",", ".");
+    const n = parseFloat(s);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function canCalc() {
+    return gender.value && age.value && cov.value && smoker.value !== "";
+  }
+
+  async function calc() {
+    if (!canCalc()) {
+      out.textContent = "—";
+      hint.textContent = "Selecione gênero, idade, cobertura.";
+      return;
+    }
+
+    // ✅ PASSA 0/1 EXATAMENTE (igual seu select)
+    const url =
+      `/api/calc-premium/?gender=${encodeURIComponent(gender.value)}` +
+      `&age=${encodeURIComponent(age.value)}` +
+      `&coverage=${encodeURIComponent(cov.value)}` +
+      `&smoker=${encodeURIComponent(smoker.value)}` +
+      `&health=${encodeURIComponent(health.value || "OK")}`;
+
+    try {
+      hint.textContent = "Calculando...";
+      const res = await fetch(url, { headers: { "Accept": "application/json" } });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data.ok) {
+        out.textContent = "—";
+        hint.textContent = (data && (data.error || data.message)) || "Sem preço cadastrado (verifique no Admin).";
+        console.log("calc error:", { url, status: res.status, data });
+        return;
+      }
+
+      const p = parsePrice(data.price);
+      if (p === null) {
+        out.textContent = "—";
+        hint.textContent = "Preço inválido retornado pela API.";
+        console.log("invalid price:", data);
+        return;
+      }
+
+      out.textContent = `$${p.toFixed(2)}`;
+      hint.textContent = "";
+      console.log("calc ok:", { url, price: p, debug: data.debug || null });
+
+    } catch (e) {
+      out.textContent = "—";
+      hint.textContent = "Erro ao calcular. Veja o Console (F12).";
+      console.error("calc exception:", e);
+    }
+  }
+
+  [gender, age, cov, smoker, health].forEach(el => {
+    el.addEventListener("change", calc);
+    el.addEventListener("keyup", calc);
+  });
+
+  calc();
+})();
+</script>
+
+{% endblock %}
