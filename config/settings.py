@@ -6,6 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
+
+
 STATIC_URL = "/static/"
 
 LANGUAGE_CODE = "en-us"
@@ -16,9 +18,8 @@ USE_TZ = True
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'dev-secret-key'
-DEBUG = False
-ALLOWED_HOSTS = ["hellerfinance.com", "www.hellerfinance.com", "S72.62.211.122"]
-
+DEBUG = True
+ALLOWED_HOSTS = ["10.0.0.151", "127.0.0.1", "localhost"]
 
 INSTALLED_APPS = [
     "jazzmin",
@@ -84,11 +85,11 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = "gedeonfigueiredo@gmail.com"
-EMAIL_HOST_PASSWORD = "t b r h y u d k p a s z j a t o"
+EMAIL_HOST_USER = "hellerfinance5r@gmail.com"
+EMAIL_HOST_PASSWORD = "daqnwamnbcongogo"
 
-DEFAULT_FROM_EMAIL = "Heller Finance <gedeonfigueiredo@gmail.com>"
-SERVER_EMAIL = "gedeonfigueiredo@gmail.com"
+DEFAULT_FROM_EMAIL = "Heller Finance <hellerfinance5r@gmail.com>"
+SERVER_EMAIL = "hellerfinance5r@gmail.com"
 
 # opcional
 SEND_CONFIRMATION_TO_CLIENT = True
@@ -117,5 +118,7 @@ JAZZMIN_SETTINGS = {
 LOGIN_URL = "/admin/login/"
 LOGIN_REDIRECT_URL = "/admin/"
 LOGOUT_REDIRECT_URL = "/admin/login/"
+
+
 
 

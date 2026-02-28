@@ -1,0 +1,152 @@
+<style>
+  /* FIX: textos apagados nessas 3 páginas */
+  .page-article .panel,
+  .page-article .panel *{
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .page-article .panel{
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .page-article .article-content{
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* cores */
+  .page-article .article-content p,
+  .page-article .article-content li{
+    color: rgba(234,242,255,.92) !important;
+  }
+
+  .page-article .article-content h1,
+  .page-article .article-content h2,
+  .page-article .article-content h3{
+    color: #D4AF37 !important;
+    opacity: 1 !important;
+  }
+</style>
+
+{% extends "website/base.html" %}
+{% block title %}Proteção Familiar | Heller Finance{% endblock %}
+{% block content %}
+
+<div class="container my-5 page-article">
+  <div class="panel p-4 p-md-5">
+
+    <div class="article-content">
+      <!-- TÍTULO PRINCIPAL -->
+      <h1 class="section-title">Proteção, Segurança e Estabilidade para Quem Você Ama</h1>
+      <p class="section-subtitle">
+        A base de qualquer patrimônio sólido começa com a proteção da família.
+      </p>
+
+      <p>Imprevistos fazem parte da vida, mas a falta de planejamento não precisa fazer.</p>
+
+      <p>Sem uma estrutura adequada, uma família pode enfrentar:</p>
+
+      <ul class="plan-checks">
+        <li>Perda repentina de renda</li>
+        <li>Dívidas inesperadas</li>
+        <li>Custos médicos elevados</li>
+        <li>Instabilidade financeira em momentos críticos</li>
+      </ul>
+
+      <p>
+        Na Heller Finance, orientamos famílias na escolha de estratégias que unem proteção imediata
+        com segurança financeira de longo prazo, utilizando soluções oferecidas por seguradoras
+        consolidadas no mercado.
+      </p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2 class="mt-4">Proteção com Benefícios em Vida</h2>
+
+      <p>
+        As soluções de proteção utilizadas em nosso planejamento podem oferecer benefícios ainda em vida,
+        permitindo acesso a recursos financeiros em momentos delicados.
+      </p>
+
+      <p>Esses benefícios podem auxiliar em situações como:</p>
+
+      <ul class="plan-checks">
+        <li>Doenças graves</li>
+        <li>Condições crônicas</li>
+        <li>Necessidade de cuidados prolongados</li>
+        <li>Impactos significativos na renda familiar</li>
+      </ul>
+
+      <p>O objetivo é preservar:</p>
+
+      <ul class="plan-checks">
+        <li>A dignidade da família</li>
+        <li>A estabilidade financeira</li>
+        <li>O patrimônio construído ao longo dos anos</li>
+      </ul>
+
+      <p><strong>Proteção de verdade não começa apenas após a morte.<br>Ela começa quando a família mais precisa.</strong></p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Segurança Financeira para o Presente e o Futuro</h2>
+
+      <p>Um planejamento familiar adequado busca:</p>
+
+      <ul class="plan-checks">
+        <li>Garantir renda para quem fica</li>
+        <li>Organizar dívidas e despesas essenciais</li>
+        <li>Proteger o padrão de vida da família</li>
+        <li>Criar tranquilidade emocional em momentos difíceis</li>
+      </ul>
+
+      <p>Porque segurança financeira também significa paz de espírito.</p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Visão de Longo Prazo</h2>
+
+      <p>Além da proteção imediata, o planejamento pode contribuir para:</p>
+
+      <ul class="plan-checks">
+        <li>Construção de patrimônio familiar</li>
+        <li>Crescimento financeiro com segurança</li>
+        <li>Planejamento educacional dos filhos</li>
+        <li>Organização sucessória</li>
+      </ul>
+
+      <p>A intenção é que a família esteja protegida hoje, amanhã e nas próximas gerações.</p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Um Compromisso com o que Realmente Importa</h2>
+
+      <p>Planejamento familiar não é apenas uma decisão financeira.<br>É uma decisão de amor, responsabilidade e visão de futuro.</p>
+
+      <p>Cuidar da sua família hoje é garantir que ela estará protegida, independentemente do que aconteça.</p>
+
+      <div class="section-divider my-4"></div>
+
+      <h3 class="mt-4">Fale com a Heller Finance</h3>
+
+      <p>
+        Descubra como estruturar uma proteção completa para sua família,
+        com benefícios em vida, segurança financeira e planejamento de longo prazo.
+      </p>
+
+      <p>
+        Entre em contato com a equipe da Heller Finance e dê o próximo passo
+        na proteção de quem você ama.
+      </p>
+
+      <div class="d-flex gap-2 flex-wrap mt-4">
+        <a href="{% url 'contact' %}" class="btn btn-outline-soft">Fale Conosco</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

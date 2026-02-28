@@ -7,6 +7,35 @@ from django.core.mail import EmailMessage
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
+from .models import Audience
+
+from django.shortcuts import get_object_or_404
+
+
+
+
+
+
+def audience_detail(request, slug):
+    audience = get_object_or_404(Audience, slug=slug)
+    return render(request, "website/audience_detail.html", {
+        "audience": audience
+    })
+
+
+
+import logging
+logger = logging.getLogger(__name__)
+
+def quote(request):
+    logger.warning("QUOTE VIEW: method=%s", request.method)
+    if request.method == "POST":
+        logger.warning("QUOTE POST DATA: %s", dict(request.POST))
+    
+
+
+
+
 from .models import (
     Banner, HomeCard, GalleryImage,
     Testimonial, VideoTestimonial,
@@ -46,6 +75,8 @@ def home(request):
         is_approved=True
     ).order_by("order", "-created_at")[:6]
 
+    audiences = Audience.objects.filter(is_active=True).order_by("order", "id")
+
     return render(request, "website/home.html", {
         "banners": banners,
         "cards": cards,
@@ -53,8 +84,8 @@ def home(request):
         "gallery_images": gallery,
         "testimonials": testimonials,
         "video_testimonials": video_testimonials,
+        "audiences": audiences,
     })
-
 
 def about(request):
     return render(request, "website/about.html")
@@ -208,3 +239,23 @@ Message:
         return redirect("/contact/")
 
     return render(request, "website/contact.html")
+def protecao_familiar(request):
+    return render(request, "website/protecao_familiar.html")
+
+
+def planejamento_filhos(request):
+    return render(request, "website/planejamento_filhos.html")
+
+
+def estrategia_empresarios(request):
+    return render(request, "website/estrategia_empresarios.html")
+
+
+def protecao_familiar(request):
+    return render(request, "website/protecao_familiar.html")
+
+def planejamento_filhos(request):
+    return render(request, "website/planejamento_filhos.html")
+
+def estrategia_empresarios(request):
+    return render(request, "website/estrategia_empresarios.html")

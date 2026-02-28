@@ -2,6 +2,18 @@ from django.contrib import admin
 from .models import Banner, HomeCard, GalleryImage, Testimonial, VideoTestimonial, TermRate
 
 
+
+from .models import Audience
+
+@admin.register(Audience)
+class AudienceAdmin(admin.ModelAdmin):
+    list_display = ("title", "order", "is_active")
+    list_editable = ("order", "is_active")
+    search_fields = ("title",)
+
+
+
+
 @admin.register(Banner)
 class BannerAdmin(admin.ModelAdmin):
     list_display = ("order", "title", "is_active")

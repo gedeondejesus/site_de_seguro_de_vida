@@ -1,0 +1,157 @@
+
+{% extends "website/base.html" %}
+{% block title %}Planejamento de Filhos | Heller Finance{% endblock %}
+
+{% block content %}
+
+<style>
+  /* FIX: textos apagados */
+  .page-article .panel,
+  .page-article .panel *{
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  .page-article .panel{
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  .page-article .article-content{
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  .page-article .panel::before,
+  .page-article .panel::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  .page-article .article-content p,
+  .page-article .article-content li{
+    color: rgba(234,242,255,.92) !important;
+  }
+
+  .page-article .article-content h1,
+  .page-article .article-content h2,
+  .page-article .article-content h3{
+    color: #D4AF37 !important;
+    opacity: 1 !important;
+  }
+</style>
+
+<div class="container my-5 page-article">
+  <div class="panel p-4 p-md-5">
+    <div class="article-content">
+
+      <h1 class="section-title">PLANEJAMENTO EDUCACIONAL</h1>
+      <p class="section-subtitle">
+        Construindo o Futuro Acadêmico dos Seus Filhos com Estratégia
+      </p>
+
+      <p>
+        A educação universitária nos Estados Unidos pode representar um dos maiores investimentos da vida de uma família.
+      </p>
+
+      <p>Sem planejamento adequado, isso pode significar:</p>
+
+      <ul class="plan-checks">
+        <li>Dívidas estudantis por décadas</li>
+        <li>Comprometimento da aposentadoria dos pais</li>
+        <li>Pressão financeira no momento mais importante da vida do filho</li>
+      </ul>
+
+      <p>
+        Na Heller Finance, estruturamos estratégias inteligentes para que a educação dos seus filhos seja uma conquista — e não um peso financeiro.
+      </p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Planejamento Estratégico para College</h2>
+      <p>Nosso planejamento educacional é desenvolvido para:</p>
+
+      <ul class="plan-checks">
+        <li>Construir capital ao longo dos anos</li>
+        <li>Criar crescimento com proteção</li>
+        <li>Preservar liquidez familiar</li>
+        <li>Reduzir dependência de empréstimos estudantis</li>
+      </ul>
+
+      <p>
+        O objetivo é preparar o futuro com antecedência, disciplina e visão de longo prazo.
+      </p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Estratégias com Crescimento Protegido</h2>
+      <p>Utilizamos estruturas financeiras que permitem:</p>
+
+      <ul class="plan-checks">
+        <li>Acumulação de capital com proteção contra perdas</li>
+        <li>Crescimento consistente ao longo do tempo</li>
+        <li>Acesso estratégico aos recursos no momento certo</li>
+        <li>Flexibilidade caso o filho escolha caminhos diferentes</li>
+      </ul>
+
+      <p>
+        O planejamento precisa ser seguro, mas também adaptável.
+      </p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Educação Sem Comprometer Sua Aposentadoria</h2>
+      <p>
+        Um dos maiores erros financeiros é sacrificar a própria aposentadoria para pagar a faculdade dos filhos.
+      </p>
+
+      <p>Nossa abordagem considera:</p>
+
+      <ul class="plan-checks">
+        <li>Segurança financeira dos pais</li>
+        <li>Planejamento de aposentadoria</li>
+        <li>Organização patrimonial familiar</li>
+        <li>Equilíbrio entre presente e futuro</li>
+      </ul>
+
+      <p>
+        Cuidar da educação dos filhos não deve significar abrir mão da própria estabilidade.
+      </p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Construção de Legado Familiar</h2>
+      <p>
+        Planejar o college vai além de pagar uma universidade.
+      </p>
+
+      <p>É estruturar:</p>
+
+      <ul class="plan-checks">
+        <li>Organização financeira familiar</li>
+        <li>Mentalidade de longo prazo</li>
+        <li>Construção de patrimônio</li>
+        <li>Segurança para a próxima geração</li>
+      </ul>
+
+      <p>
+        Educação é investimento. Planejamento é estratégia.
+      </p>
+
+      <div class="section-divider my-4"></div>
+
+      <h3>Fale Conosco</h3>
+      <p>
+        Prepare o futuro acadêmico dos seus filhos com estrutura, segurança e visão estratégica.
+      </p>
+      <p>
+        Entre em contato com a equipe da Heller Finance e descubra como criar um plano educacional alinhado aos objetivos da sua família.
+      </p>
+
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+      
+        <a href="{% url 'contact' %}" class="btn btn-outline-soft">Fale Conosco</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends "website/base.html" %}
+{% block title %}Soluções para Empresários | Heller Finance{% endblock %}
+
+{% block content %}
+
+<style>
+  /* FIX texto apagado */
+  .page-article .panel,
+  .page-article .panel *{
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .page-article .panel{
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .page-article .article-content{
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  .page-article .panel::before,
+  .page-article .panel::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  .page-article .article-content p,
+  .page-article .article-content li{
+    color: rgba(234,242,255,.92) !important;
+  }
+
+  .page-article .article-content h1,
+  .page-article .article-content h2,
+  .page-article .article-content h3{
+    color: #D4AF37 !important;
+    opacity: 1 !important;
+  }
+</style>
+
+<div class="container my-5 page-article">
+  <div class="panel p-4 p-md-5">
+
+    <div class="article-content">
+
+      <h1 class="section-title">Soluções para Empresários</h1>
+      <p class="section-subtitle">
+        Estratégia, Proteção e Crescimento Patrimonial
+      </p>
+
+      <p>
+        Empresários não precisam apenas de seguros.<br>
+        Precisam de estrutura financeira inteligente que proteja o patrimônio,
+        gere liquidez e sustente crescimento de longo prazo.
+      </p>
+
+      <p>Na Heller Finance, desenvolvemos estratégias completas que unem:</p>
+
+      <ul class="plan-checks">
+        <li>Proteção patrimonial</li>
+        <li>Eficiência tributária</li>
+        <li>Construção de capital</li>
+        <li>Planejamento sucessório</li>
+      </ul>
+
+      <p>Tudo dentro da lei e com visão de longo prazo.</p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Proteção Patrimonial (Blindagem Financeira)</h2>
+
+      <p>Empresários estão constantemente expostos a riscos jurídicos e financeiros, como:</p>
+
+      <ul class="plan-checks">
+        <li>Processos judiciais</li>
+        <li>Responsabilidades empresariais</li>
+        <li>Dívidas e obrigações fiscais</li>
+        <li>Instabilidade econômica</li>
+      </ul>
+
+      <p>A blindagem patrimonial utiliza estruturas financeiras e jurídicas legais para:</p>
+
+      <ul class="plan-checks">
+        <li>Proteger ativos pessoais</li>
+        <li>Separar risco empresarial do patrimônio familiar</li>
+        <li>Preservar riqueza ao longo das gerações</li>
+      </ul>
+
+      <p><strong>Blindagem não é esconder patrimônio.<br>
+      É organizar de forma estratégica e legal.</strong></p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Infinity Banking Concept</h2>
+      <p class="section-subtitle">Torne-se o seu próprio banco</p>
+
+      <p>O Infinity Banking é uma estratégia que permite ao empresário:</p>
+
+      <ul class="plan-checks">
+        <li>Criar sua própria fonte de capital</li>
+        <li>Financiar projetos com autonomia</li>
+        <li>Recuperar juros para dentro do próprio patrimônio</li>
+        <li>Manter controle total sobre a liquidez</li>
+      </ul>
+
+      <p>Utilizando estruturas financeiras adequadas, é possível:</p>
+
+      <ul class="plan-checks">
+        <li>Construir capital protegido</li>
+        <li>Acessar recursos em vida com eficiência fiscal</li>
+        <li>Criar um sistema financeiro próprio dentro do seu patrimônio</li>
+      </ul>
+
+      <p><strong>Você deixa de ser dependente de bancos<br>
+      e passa a operar com estratégia própria.</strong></p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Planejamento Tributário Estratégico</h2>
+
+      <p>
+        A carga tributária pode ser um dos maiores desafios para o crescimento empresarial.
+      </p>
+
+      <p>Nossas estratégias buscam:</p>
+
+      <ul class="plan-checks">
+        <li>Reduzir impacto tributário de forma legal</li>
+        <li>Aumentar eficiência fiscal do patrimônio</li>
+        <li>Planejar sucessão empresarial e familiar</li>
+        <li>Proteger herança contra perdas desnecessárias</li>
+      </ul>
+
+      <p>
+        O objetivo não é apenas economizar impostos hoje,<br>
+        mas preservar riqueza por décadas.
+      </p>
+
+      <div class="section-divider my-4"></div>
+
+      <h2>Crescimento com Proteção</h2>
+
+      <p>Nosso foco é estruturar soluções financeiras inteligentes que combinam:</p>
+
+      <ul class="plan-checks">
+        <li>Proteção jurídica e patrimonial</li>
+        <li>Liquidez estratégica</li>
+        <li>Crescimento financeiro sustentável</li>
+        <li>Segurança para a família e para o negócio</li>
+      </ul>
+
+      <p><strong>Empresários bem-sucedidos não dependem de sorte.<br>
+      Eles dependem de estrutura e estratégia.</strong></p>
+
+      <div class="mt-4 d-flex gap-2 flex-wrap">
+      
+        <a href="{% url 'contact' %}" class="btn btn-outline-soft">Fale Conosco</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

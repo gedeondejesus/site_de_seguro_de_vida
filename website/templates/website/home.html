@@ -30,7 +30,7 @@
               com estratégia e propósito.
             </div>
             <div class="hero-cta">
-              <a class="btn btn-gold" href="/quote/">Agendar uma conversa</a>
+              <a class="btn btn-gold" href="/contact/">Agendar uma conversa</a>
             </div>
           </div>
         </div>
@@ -50,79 +50,47 @@
   {% else %}
     <div class="alert alert-warning mt-3">No banners yet. Add banners in Admin.</div>
   {% endif %}
-
+  <div class="section-divider my-4"></div>
   <!-- LINHA BRILHANTE -->
   <div class="section-divider my-4"></div>
-
-  <!-- SEGURADORA PARCEIRA -->
-  <section class="panel partner-panel">
-    <div class="partner-wrap">
-
-      <div class="partner-logo-box">
-        <img
-          src="{% static 'website/img/national-life-group.png' %}"
-          alt="National Life Group"
-          class="partner-logo"
-        >
-      </div>
-
-      <div class="partner-text">
-        <div class="panel-title">Empresa que representamos</div>
-        <div class="panel-subtitle partner-desc">
-          A <strong>National Life Group</strong> é uma seguradora americana com mais de
-          <strong>170 anos de história</strong>, reconhecida pela solidez financeira,
-          confiança no mercado e compromisso em proteger famílias e empresas.
-          <br><br>
-          A empresa oferece soluções modernas de seguro de vida com benefícios em vida,
-          estratégias de proteção patrimonial e planejamento financeiro de longo prazo,
-          ajudando clientes a construir segurança, estabilidade e crescimento financeiro em dólar.
-          <br><br>
-          Com presença nacional nos Estados Unidos e forte reputação de credibilidade,
-          a National Life Group combina tradição, inovação e atendimento humano para garantir
-          tranquilidade hoje e proteção para o futuro.
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LINHA BRILHANTE -->
-  <div class="section-divider my-4"></div>
-
-  <!-- SERVIÇOS -->
+  <!-- PARA QUEM ATENDEMOS -->
+  
   <section class="panel">
-    <div class="row g-3">
-      <div class="col-md-4">
-        <div class="service-mini">
-          <div class="icon">🛡️</div>
-          <h4>Proteção Familiar</h4>
-          <p>Segurança para quem você ama, com planejamento e clareza.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-mini">
-          <div class="icon">📈</div>
-          <h4>Estratégia para Empresários</h4>
-          <p>Soluções financeiras sob medida para crescer com proteção.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-mini">
-          <div class="icon">👨‍👩‍👧‍👦</div>
-          <h4>Planejamento de Filhos</h4>
-          <p>Construindo um futuro sólido com decisões inteligentes.</p>
-        </div>
+     
+ <div class="row g-4">
+  {% for a in audiences %}
+  <div class="col-md-4">
+    <div class="audience-card">
+      <img src="{{ a.image.url }}" alt="{{ a.title }}">
+
+      <div class="cap">
+        <div class="aud-title">{{ a.title }}</div>
+
+        {% if a.subtitle %}
+          <div class="aud-sub">{{ a.subtitle }}</div>
+        {% endif %}
+
+        {% if a.order == 1 %}
+          <a href="{% url 'protecao_familiar' %}" class="btn btn-outline-soft mt-2">Saber mais</a>
+        {% elif a.order == 2 %}
+          <a href="{% url 'planejamento_filhos' %}" class="btn btn-outline-soft mt-2">Saber mais</a>
+        {% elif a.order == 3 %}
+          <a href="{% url 'estrategia_empresarios' %}" class="btn btn-outline-soft mt-2">Saber mais</a>
+        {% else %}
+          <a href="#" class="btn btn-outline-soft mt-2">Saber mais</a>
+        {% endif %}
       </div>
     </div>
-  </section>
-
+  </div>
+  {% endfor %}
+</div>
   <!-- LINHA BRILHANTE -->
   <div class="section-divider my-4"></div>
-
+  
   <!-- CARDS DINÂMICOS -->
   <section class="panel">
-    <div class="panel-title">Nossos Serviços</div>
-    <div class="panel-subtitle">Escolha a melhor proteção com clareza.</div>
+    <div class="panel-title">Para Quem Atendemos</div>
+    <div class="panel-subtitle">Atendimento com excelência, em português.</div>
 
     <div class="row g-4 mt-2">
       {% if cards %}
@@ -134,7 +102,7 @@
             {% endif %}
             <div class="premium-card__body">
               <div class="premium-card__meta">
-                <div class="premium-icon">★</div>
+                <div class="premium-icon">✔</div>
                 <div class="premium-card__title">{{ c.title }}</div>
               </div>
               <p class="premium-card__desc">{{ c.description }}</p>
@@ -148,40 +116,6 @@
         </div>
       {% endif %}
     </div>
-  </section>
-
-  <!-- LINHA BRILHANTE -->
-  <div class="section-divider my-4"></div>
-
-  <!-- PARA QUEM ATENDEMOS -->
-  <section class="panel">
-    <div class="panel-title text-center">Para Quem Atendemos</div>
-    <div class="panel-subtitle text-center">Atendimento com excelência, em português.</div>
-
-    <div class="row g-3 mt-3">
-      <div class="col-md-4">
-        <div class="audience-card">
-          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=70" alt="Famílias e Mães">
-          <div class="cap">Famílias &amp; Mães</div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="audience-card">
-          <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=70" alt="Empresários">
-          <div class="cap">Empresários</div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="audience-card">
-          <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1200&q=70" alt="Brasileiros nos EUA">
-          <div class="cap">Brasileiros nos EUA</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LINHA BRILHANTE -->
-  <div class="section-divider my-4"></div>
 
   <!-- DEPOIMENTOS -->
   <section class="panel">
@@ -229,10 +163,42 @@
 
   </section>
 
-  <!-- LINHA BRILHANTE -->
+ <!-- LINHA BRILHANTE -->
   <div class="section-divider my-4"></div>
 
-  <!-- VÍDEOS DE DEPOIMENTOS -->
+  <!-- SEGURADORA PARCEIRA -->
+  <section class="panel partner-panel">
+    <div class="partner-wrap">
+
+      <div class="partner-logo-box">
+        <img
+          src="{% static 'website/img/national-life-group.png' %}"
+          alt="National Life Group"
+          class="partner-logo"
+        >
+      </div>
+
+      <div class="partner-text">
+        <div class="panel-title">Empresa que representamos</div>
+        <div class="panel-subtitle partner-desc">
+          A <strong>National Life Group</strong> é uma seguradora americana com mais de
+          <strong>170 anos de história</strong>, reconhecida pela solidez financeira,
+          confiança no mercado e compromisso em proteger famílias e empresas.
+          <br><br>
+          A empresa oferece soluções modernas de seguro de vida com benefícios em vida,
+          estratégias de proteção patrimonial e planejamento financeiro de longo prazo,
+          ajudando clientes a construir segurança, estabilidade e crescimento financeiro em dólar.
+          <br><br>
+          Com presença nacional nos Estados Unidos e forte reputação de credibilidade,
+          a National Life Group combina tradição, inovação e atendimento humano para garantir
+          tranquilidade hoje e proteção para o futuro.
+        </div>
+      </div>
+
+    </div>
+  </section>
+<!-- LINHA BRILHANTE -->
+  <div class="section-divider my-4"></div>
   <section class="panel mt-4">
     <div class="panel-title text-center">Vídeos de Depoimentos</div>
     <div class="panel-subtitle text-center">Veja pessoas reais contando a experiência.</div>
@@ -270,7 +236,7 @@
               </div>
 
               <div class="mt-2" style="opacity:.65; font-size:.9rem;">
-                Se o player não carregar, o vídeo pode estar com incorporação bloqueada pelo canal.
+               
               </div>
             </div>
           </div>

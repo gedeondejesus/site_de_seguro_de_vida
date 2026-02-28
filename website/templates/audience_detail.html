@@ -1,0 +1,19 @@
+{% extends "website/base.html" %}
+
+{% block title %}{{ audience.title }} | Heller Finance{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="panel">
+    <h1 class="panel-title">{{ audience.title }}</h1>
+
+    {% if audience.subtitle %}
+      <p class="panel-subtitle">{{ audience.subtitle }}</p>
+    {% endif %}
+
+    <div class="mt-4">
+      <a href="/quote/" class="btn btn-gold">Obter Cotação</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
